@@ -1,0 +1,36 @@
+<nav class="navbar">
+  <div class="navbar-brand">
+    <img
+      ngSrc="images/logos/light-theme/PizzaLogoLT.png"
+      alt="Pizza ME-A Logo"
+      width="100"
+      height="100"
+      class="navbar-logo"
+    />
+    <img
+      ngSrc="images/logos/light-theme/LogoTextLT.png"
+      alt="Pizza ME-A Text Logo"
+      width="200"
+      height="200"
+      class="navbar-text-logo"
+    />
+
+  </div>
+
+  <div class="navbar-items">
+    <div class="navbar-links">
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Home</a>
+        <a routerLink="/build-pizza" routerLinkActive="active" class="nav-link">Build Your Pizza</a>
+        <a routerLink="/menu" routerLinkActive="active" class="nav-link">Menu</a>
+        <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
+    </div>
+
+    <div class="navbar-cart">
+        <button class="cart-button" routerLink="/cart">
+        <span class="material-symbols-outlined cart-icon">shopping_cart</span>
+        <span class="cart-text">Cart (0)</span>
+        </button>
+    </div>
+  </div>
+</nav>
+
