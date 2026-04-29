@@ -3,7 +3,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'navbar',
   imports: [NgOptimizedImage, RouterLink, RouterLinkActive],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',

@@ -1,10 +1,16 @@
 import { Routes } from '@angular/router';
+import { Homepage } from './homepage/homepage';
+
+// import { Menu } from './menu/menu';
+// import { BuildPizza } from './build-pizza/build-pizza';
+// import { Contact } from './contact/contact';
+// import { Cart } from './cart/cart';
 
 export const routes: Routes = [
-    // { path: 'home', component: Home },
-    { path: 'menu', component: {} as any },
-    { path: 'build-pizza', component: {} as any },
-    { path: 'contact', component: {} as any },
-    { path: 'cart', component: {} as any },
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    {path: '', component: Homepage},
+    
+//Commented out for now, as these pages are not yet implemented
+//   { path: 'menu', component: Menu },
+//   { path: 'build-pizza', component: BuildPizza },
+//   { path: 'cart', component: Cart },
 ];
