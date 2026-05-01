@@ -1,0 +1,17 @@
+<div class="card p-4 mt-4 shadow-sm" [formGroup]="form">
+  <div class="mb-3">
+    <label class="form-label">First Name</label>
+    <input type="text" class="form-control" placeholder="FIRST NAME" formControlName="firstName" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Last Name</label>
+    <input type="text" class="form-control" placeholder="LAST NAME" formControlName="lastName" />
+  </div>
+  <div>
+    <label class="form-label">Pick-up Time</label>
+    <select class="form-select" formControlName="pickupTime">
+      <option value="" disabled selected>Select a time</option>
+      <option *ngFor="let t of pickupTimes" [value]="t">{{ t }}</option>
+    </select>
+  </div>
+</div>
