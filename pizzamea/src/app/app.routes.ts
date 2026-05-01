@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { Homepage } from './homepage/homepage';
+import { Cart } from './cart/cart';
 
 // import { Menu } from './menu/menu';
 // import { BuildPizza } from './build-pizza/build-pizza';
@@ -12,5 +13,5 @@ export const routes: Routes = [
 //Commented out for now, as these pages are not yet implemented
 //   { path: 'menu', component: Menu },
 //   { path: 'build-pizza', component: BuildPizza },
-//   { path: 'cart', component: Cart },
+  { path: 'cart', component: Cart },
 ];
