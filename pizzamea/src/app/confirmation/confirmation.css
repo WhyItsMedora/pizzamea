@@ -1,0 +1,18 @@
+.page {
+    background-color: floralwhite;
+}
+
+.card {
+    border-color: white;
+}
+
+button {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: crimson;
+    color: white
+}

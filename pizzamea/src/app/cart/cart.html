@@ -9,7 +9,12 @@
           <app-payment-form [form]="paymentGroup"></app-payment-form>
           <app-customer-info-form [form]="customerInfoGroup"></app-customer-info-form>
           <div class="text-end">
-            <button type="submit" class="btn mt-3 mb-3" [disabled]="!group.valid">
+            <button
+              type="button"
+              class="btn mt-3 mb-3"
+              [disabled]="!group.valid"
+              (click)="placeOrder()"
+            >
               Place Order
             </button>
           </div>

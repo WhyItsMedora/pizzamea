@@ -8,7 +8,7 @@
     <input type="text" class="form-control" placeholder="LAST NAME" formControlName="lastName" />
   </div>
   <div>
-    <label class="form-label">Pick-up Time</label>
+    <label class="form-label">Pickup Time</label>
     <select class="form-select" formControlName="pickupTime">
       <option value="" disabled selected>Select a time</option>
       <option *ngFor="let t of pickupTimes" [value]="t">{{ t }}</option>
