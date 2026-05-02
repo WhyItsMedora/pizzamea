@@ -1,0 +1,67 @@
+<div class="page">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 class="text-center mt-4">Order Confirmed</h1>
+      <p class="text-center mt-3" *ngIf="order">
+        Thank you for your order {{ order.firstName }}, We're firing up your pizza!
+      </p>
+      <div class="col-md-8">
+        <div class="card p-4 mt-3 shadow-sm">
+          <div class="row">
+            <div class="col-md-4 d-flex text-start gap-2">
+              <img src="images/logos/light-theme/order-icon.png" width="60" height="60" />
+              <div>
+                <p class="mb-1">Order ID</p>
+                <p>
+                  <strong>{{ order?.id }}</strong>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 text-center">
+              <p class="mb-1">Name</p>
+              <p>
+                <strong>{{ order?.firstName }} {{ order?.lastName }}</strong>
+              </p>
+            </div>
+            <div class="col-md-4 d-flex text-start gap-2 justify-content-end">
+              <img src="images/logos/light-theme/clock-icon.png" width="60" height="60" />
+              <div>
+                <p class="mb-1">Pickup Time</p>
+                <p>
+                  <strong>{{ order?.pickupTime }}</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+          <h4 class="mt-4">Order Summary</h4>
+          <p class="card text-center">summary here</p>
+          <h5 class="text-end">Total: $0.00</h5>
+        </div>
+      </div>
+      <div class="col-md-8 mt-4">
+        <div class="card p-4 mt-3 shadow-sm">
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Pickup Location</h3>
+              <h4>Pizza ME-A!</h4>
+              <div class="mt-5">
+                <p>123 Pizza Street.</p>
+                <p>Foodville, FV 12345</p>
+              </div>
+              <div class="mt-5"><p>Questions? Call us at (555) 123-PIZZA</p></div>
+              <button type="button" class="btn mt-4" routerLink="">Go Back to Home Page</button>
+            </div>
+            <div class="col-md-6 d-flex justify-content-end">
+              <img
+                src="/images/logos/light-theme/location-map.jpg"
+                alt="Map showing location of Pizza ME-A!"
+                width="350"
+                height="350"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

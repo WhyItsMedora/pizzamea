@@ -3,6 +3,7 @@ import {FormGroup, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-payment-form',
+  standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './payment-form.html',
   styleUrl: './payment-form.css',
