@@ -1,0 +1,13 @@
+<div class="menu-item-card">
+  @if (item.emoji) {
+    <div class="item-emoji">{{ item.emoji }}</div>
+  }
+  <div class="item-info">
+    <h4 class="item-name">{{ item.name }}</h4>
+    <p class="item-description">{{ item.description }}</p>
+  </div>
+  <div class="item-footer">
+    <span class="item-price">${{ item.price.toFixed(2) }}</span>
+    <button class="add-btn" (click)="onAddToCart()">Add to Cart</button>
+  </div>
+</div>

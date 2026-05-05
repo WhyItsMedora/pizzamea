@@ -1,10 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MenuItem } from '../services/menu.service';
 
 @Component({
   selector: 'app-menu-item',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './menu-item.html',
   styleUrl: './menu-item.css'
 })

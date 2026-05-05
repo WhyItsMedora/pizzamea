@@ -1,0 +1,20 @@
+<div class="menu-page">
+  <div class="menu-header">
+    <h1>Our Menu</h1>
+    <p>Build your own custom pizza or add sides, desserts, and drinks to complete your order!</p>
+    <button class="build-pizza-btn" routerLink="/build-pizza">Build Your Own Pizza</button>
+  </div>
+
+  <div class="menu-content container">
+    @for (category of categories; track category.name) {
+      <div class="menu-category">
+        <h2 class="category-title">{{ category.name }}</h2>
+        <div class="items-grid">
+          @for (item of category.items; track item.id) {
+            <app-menu-item [item]="item" (addToCart)="onAddToCart($event)"></app-menu-item>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>
