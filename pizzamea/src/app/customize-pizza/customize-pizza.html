@@ -1,0 +1,177 @@
+<div class="customize-page">
+  <div class="page-header">
+    <h1 class="page-title">Build Your Perfect Pizza</h1>
+    <p class="page-subtitle">Customize every detail of your pizza exactly how you like it</p>
+  </div>
+
+  <div class="customize-layout">
+
+    <!-- LEFT: Options -->
+    <div class="options-panel">
+
+      <!-- Size -->
+      <div class="option-section">
+        <h2 class="option-title">1. Choose Your Size</h2>
+        <div class="option-grid">
+          @for (size of pizzaBuilder.sizes; track size.id) {
+            <button
+              class="option-btn"
+              [class.selected]="pizzaBuilder.pizza().size?.id === size.id"
+              (click)="selectSize(size)">
+              @if (pizzaBuilder.pizza().size?.id === size.id) {
+                <span class="checkmark">✓</span>
+              }
+              <span class="btn-name">{{ size.name }}</span>
+              <span class="option-price">${{ size.price.toFixed(2) }}</span>
+            </button>
+          }
+        </div>
+      </div>
+
+      <!-- Crust -->
+      <div class="option-section">
+        <h2 class="option-title">2. Pick Your Crust</h2>
+        <div class="option-grid">
+          @for (crust of pizzaBuilder.crusts; track crust.id) {
+            <button
+              class="option-btn"
+              [class.selected]="pizzaBuilder.pizza().crust?.id === crust.id"
+              (click)="selectCrust(crust)">
+              @if (pizzaBuilder.pizza().crust?.id === crust.id) {
+                <span class="checkmark">✓</span>
+              }
+              <span class="btn-name">{{ crust.name }}</span>
+              <span class="option-price">{{ crust.price > 0 ? '+$' + crust.price.toFixed(2) : 'Included' }}</span>
+            </button>
+          }
+        </div>
+      </div>
+
+      <!-- Sauce -->
+      <div class="option-section">
+        <h2 class="option-title">3. Select Your Sauce</h2>
+        <div class="option-grid">
+          @for (sauce of pizzaBuilder.sauces; track sauce.id) {
+            <button
+              class="option-btn"
+              [class.selected]="pizzaBuilder.pizza().sauce?.id === sauce.id"
+              (click)="selectSauce(sauce)">
+              @if (pizzaBuilder.pizza().sauce?.id === sauce.id) {
+                <span class="checkmark">✓</span>
+              }
+              <span class="btn-name">{{ sauce.name }}</span>
+              <span class="option-price">{{ sauce.price > 0 ? '+$' + sauce.price.toFixed(2) : 'Included' }}</span>
+            </button>
+          }
+        </div>
+      </div>
+
+      <!-- Cheese -->
+      <div class="option-section">
+        <h2 class="option-title">4. Select Cheese</h2>
+        <div class="option-grid">
+          @for (cheese of pizzaBuilder.cheeses; track cheese.id) {
+            <button
+              class="option-btn"
+              [class.selected]="pizzaBuilder.pizza().cheese?.id === cheese.id"
+              (click)="selectCheese(cheese)">
+              @if (pizzaBuilder.pizza().cheese?.id === cheese.id) {
+                <span class="checkmark">✓</span>
+              }
+              <span class="btn-name">{{ cheese.name }}</span>
+              <span class="option-price">{{ cheese.price > 0 ? '+$' + cheese.price.toFixed(2) : 'Included' }}</span>
+            </button>
+          }
+        </div>
+      </div>
+
+      <!-- Toppings -->
+      <div class="option-section">
+        <h2 class="option-title">5. Add Your Toppings <span class="topping-limit">(Max 6, {{ pizzaBuilder.pizza().toppings.length }}/6 selected)</span></h2>
+
+        <!-- Filter Tabs -->
+        <div class="topping-tabs">
+          @for (tab of toppingTabs; track tab) {
+            <button
+              class="tab-btn"
+              [class.active]="activeTab === tab"
+              (click)="activeTab = tab">
+              {{ tab }}
+            </button>
+          }
+        </div>
+
+        <!-- Toppings List -->
+        <div class="toppings-list">
+          @for (topping of getFilteredToppings(); track topping.id) {
+            <div class="topping-row" [class.selected]="pizzaBuilder.isToppingSelected(topping.id)">
+              <div class="topping-info">
+                <span class="topping-name">{{ topping.name }}</span>
+                <span class="topping-price">+${{ topping.price.toFixed(2) }}</span>
+              </div>
+              <button class="topping-add-btn" (click)="toggleTopping(topping)">
+                {{ pizzaBuilder.isToppingSelected(topping.id) ? '−' : '+' }}
+              </button>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Summary -->
+    <div class="summary-panel">
+      <h2 class="summary-title">Your Pizza</h2>
+      <div class="summary-content">
+        @if (pizzaBuilder.pizza().size) {
+          <div class="summary-row">
+            <span class="summary-label">Size</span>
+            <span class="summary-value">{{ pizzaBuilder.pizza().size?.name }}</span>
+          </div>
+        }
+        @if (pizzaBuilder.pizza().crust) {
+          <div class="summary-row">
+            <span class="summary-label">Crust</span>
+            <span class="summary-value">{{ pizzaBuilder.pizza().crust?.name }}</span>
+          </div>
+        }
+        @if (pizzaBuilder.pizza().sauce) {
+          <div class="summary-row">
+            <span class="summary-label">Sauce</span>
+            <span class="summary-value">{{ pizzaBuilder.pizza().sauce?.name }}</span>
+          </div>
+        }
+        @if (pizzaBuilder.pizza().cheese) {
+          <div class="summary-row">
+            <span class="summary-label">Cheese</span>
+            <span class="summary-value">{{ pizzaBuilder.pizza().cheese?.name }}</span>
+          </div>
+        }
+        @if (pizzaBuilder.pizza().toppings.length > 0) {
+          <div class="summary-row">
+            <span class="summary-label">Toppings</span>
+            <span class="summary-value">
+              @for (topping of pizzaBuilder.pizza().toppings; track topping.id) {
+                <span class="topping-tag">{{ topping.name }}</span>
+              }
+            </span>
+          </div>
+        }
+      </div>
+      <div class="summary-footer">
+        <div class="total-row">
+          <span class="total-label">Total</span>
+          <span class="total-price">${{ pizzaBuilder.price().toFixed(2) }}</span>
+        </div>
+        <button
+          class="place-order-btn"
+          [disabled]="!pizzaBuilder.isValid()"
+          (click)="addToCart()">
+          Place Order
+        </button>
+        <p class="order-note">Ready for pickup in 15-20 minutes</p>
+      </div>
+    </div>
+
+  </div>
+</div>
