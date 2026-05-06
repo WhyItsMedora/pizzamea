@@ -14,23 +14,29 @@
       height="200"
       class="navbar-text-logo"
     />
-
   </div>
 
   <div class="navbar-items">
     <div class="navbar-links">
-        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Home</a>
-        <a routerLink="/build-pizza" routerLinkActive="active" class="nav-link">Build Your Pizza</a>
-        <a routerLink="/menu" routerLinkActive="active" class="nav-link">Menu</a>
-        <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
+      <a
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link"
+        >Home</a
+      >
+      <a routerLink="/customize-pizza" routerLinkActive="active" class="nav-link"
+        >Build Your Pizza</a
+      >
+      <a routerLink="/menu" routerLinkActive="active" class="nav-link">Menu</a>
+      <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
     </div>
 
     <div class="navbar-cart">
-        <button class="cart-button" routerLink="/cart">
+      <button class="cart-button" routerLink="/cart">
         <span class="material-symbols-outlined cart-icon">shopping_cart</span>
         <span class="cart-text">Cart (0)</span>
-        </button>
+      </button>
     </div>
   </div>
 </nav>
-
