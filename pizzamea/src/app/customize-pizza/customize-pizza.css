@@ -1,5 +1,6 @@
 .customize-page {
     background-color: floralwhite;
+    font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     padding: 30px 20px 40px;
 }
@@ -39,9 +40,10 @@
 
 .option-section {
     background: white;
-    border: 1px solid #e0d5c5;
+    border: 1px solid #cbced4;
     border-radius: 10px;
     padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .option-title {
@@ -64,8 +66,8 @@
 }
 
 .option-btn {
-    background-color: floralwhite;
-    border: 2px solid #e0d5c5;
+    background-color: white;
+    border: 2px solid #cbced4;
     border-radius: 8px;
     padding: 12px 8px;
     font-size: 0.82rem;
@@ -80,7 +82,7 @@
 }
 
 .option-btn:hover {
-    border-color: #c0392b;
+    border-color: #D1768F;
 }
 
 .option-btn.selected {
@@ -141,14 +143,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 8px 10px;
-    border: 1px solid #e0d5c5;
+    border: 1px solid #cbced4;
     border-radius: 6px;
-    background: floralwhite;
+    background: white;
     transition: all 0.15s ease;
 }
 
 .topping-row.selected {
-    border-color: #c0392b;
+    border-color: #D1768F;
     background: #fff0f0;
 }
 
@@ -189,6 +191,8 @@
     color: red;
 }
 
+
+
 /* RIGHT PANEL */
 .summary-panel {
     flex: 1;
@@ -198,6 +202,7 @@
     padding: 20px;
     position: sticky;
     top: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .summary-title {
@@ -229,37 +234,33 @@
 
 .summary-value {
     font-size: 0.9rem;
-    font-weight: 600;
-    color: #c0392b;
+    font-weight: 700;
+    color: black;
 }
 
 .topping-tag {
     display: block;
     font-size: 0.85rem;
-    color: #c0392b;
+    color: black;
 }
 
 .drizzle-tag {
     display: inline-block;
     font-size: 0.82rem;
-    color: #c0392b;
-    background-color: #fce4e4;
-    padding: 4px 8px;
-    border-radius: 12px;
-    margin-right: 6px;
-    margin-bottom: 4px;
+    color: black;
 }
 
 .extra-tag {
     display: inline-block;
     font-size: 0.82rem;
-    color: #c0392b;
+    color: black;
     background-color: #fce4e4;
     padding: 4px 8px;
     border-radius: 12px;
     margin-right: 6px;
     margin-bottom: 4px;
 }   
+
 
 .summary-footer {
     margin-top: 20px;
@@ -315,4 +316,130 @@
     font-size: 0.78rem;
     color: #aaa;
     margin: 0;
+}
+
+/* DRIZZLES */
+.drizzle-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.drizzle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border: 1px solid #cbced4;
+    border-radius: 6px;
+    background: white;
+    transition: all 0.15s ease;
+}
+
+.drizzle-row.selected {
+    border-color: #D1768F;
+    background: #fff0f0;
+}
+
+.drizzle-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.drizzle-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.drizzle-price {
+    font-size: 0.72rem;
+    color: #999;
+}
+
+.drizzle-add-btn {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+}
+
+.drizzle-add-btn:hover {
+    border-color: red;
+    color: red;
+}
+
+/* EXTRAS  */
+.extra-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.extra-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border: 1px solid #cbced4;
+    border-radius: 6px;
+    background: white;
+    transition: all 0.15s ease;
+}
+
+.extra-row.selected {
+    border-color: #D1768F;
+    background: #fff0f0;
+}
+
+.extra-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.extra-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.extra-price {
+    font-size: 0.72rem;
+    color: #999;
+}
+
+.extra-add-btn,
+.extra-row .topping-add-btn {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+}
+
+.extra-add-btn:hover,
+.extra-row .topping-add-btn:hover {
+    border-color: red;
+    color: red;
+}
+
+.extra-spacer {
+    height: 15px;
 }

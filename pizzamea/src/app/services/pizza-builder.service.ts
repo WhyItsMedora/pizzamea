@@ -36,76 +36,102 @@ export class PizzaBuilderService {
 
   readonly sauces: PizzaOption[] = [
     { id: 'marinara', name: 'Marinara', price: 0 },
-    { id: 'White', name: 'White Sauce', price: 0 },
     { id: 'spicy', name: 'Spicy Red Sauce', price: 0 },
+
+    { id: 'White', name: 'White Sauce', price: 0 },
     { id: 'garlic', name: 'Garlic Pesto', price: 0 },
+
     { id: 'bbq', name: 'BBQ', price: 0 },
     { id: 'buffalo', name: 'Buffalo', price: 0 },
+
     { id: 'none', name: 'No Sauce', price: 0 },
+
   ];
 
   readonly cheeses: PizzaOption[] = [
-    { id: 'fresh_mozzarella', name: 'Fresh Mozzarella', price: 0 },
     { id: 'shredded_mozzarella', name: 'Shredded Mozzarella', price: 0 },
-    { id: 'cheddar', name: 'Cheddar', price: 0 },
+    { id: 'fresh_mozzarella', name: 'Fresh Mozzarella', price: 0 },
     { id: 'provolone', name: 'Provolone', price: 0 },
-    { id: 'parmesan', name: 'Parmesan', price: 0 },
-    {id: 'ricotta', name: 'Ricotta', price: 0 },
-    {id: 'feta', name: 'Feta Cheese', price: 0 },
-    {id: 'gorgonzola', name: 'Gorgonzola', price: 0 },
+    { id: 'cheddar', name: 'Cheddar', price: 0 },
+    { id: 'ricotta', name: 'Ricotta', price: 0 },
+    { id: 'feta', name: 'Feta Cheese', price: 0 },
+    { id: 'gorgonzola', name: 'Gorgonzola', price: 0 },
     { id: 'none', name: 'No Cheese', price: 0 },
   ];
 
   readonly meats: PizzaOption[] = [
     { id: 'pepperoni', name: 'Pepperoni', price: 1.49 },
     { id: 'sausage', name: 'Italian Sausage', price: 1.49 },
-    { id: 'chorizo', name: 'Spicy Chorizo', price: 1.49 },
-    { id: 'chicken', name: 'Grilled Chicken', price: 1.99 },
     { id: 'bacon', name: 'Bacon', price: 1.49 },
     { id: 'ham', name: 'Canadian Bacon', price: 1.49 },
+    { id: 'chicken', name: 'Grilled Chicken', price: 1.99 },
     { id: 'beef', name: 'Ground Beef', price: 1.49 },
+    { id: 'salami', name: 'Salami', price: 1.49 },
+    { id: 'meatball', name: 'Meatballs', price: 1.49 },
+    { id: 'chorizo', name: 'Spicy Chorizo', price: 1.49 },
+    { id: 'prosciutto', name: 'Prosciutto', price: 1.99 },
+    { id: 'anchovies', name: 'Anchovies', price: 1.49 },
   ];
 
   readonly veggies: PizzaOption[] = [
-    
     { id: 'mushrooms', name: 'Mushrooms', price: 0.99 },
     { id: 'peppers', name: 'Bell Peppers', price: 0.99 },
     { id: 'roasted_peppers', name: 'Roasted Bell Peppers', price: 0.99 },
-    { id: 'tomatoes', name: 'Fresh Cherry Tomatoes', price: 0.99 },
-    { id: 'roasted_tomatoes', name: 'Roasted Cherry Tomatoes', price: 0.99 },
-    { id: 'garlic', name: 'Garlic', price: 0.49 },
-    { id: 'roasted_garlic', name: 'Roasted Garlic', price: 0.99 },
+
     { id: 'yellow_onions', name: 'Yellow Onions', price: 0.99 },
     { id: 'red_onions', name: 'Red Onions', price: 0.99 },
     { id: 'roasted_onions', name: 'Roasted Onions', price: 0.99 },
+
+    { id: 'tomatoes', name: 'Fresh Cherry Tomatoes', price: 0.99 },
+    { id: 'roasted_tomatoes', name: 'Roasted Cherry Tomatoes', price: 0.99 },
+
+    { id: 'garlic', name: 'Garlic', price: 0.49 },
+    { id: 'roasted_garlic', name: 'Roasted Garlic', price: 0.99 },
+
     { id: 'olives', name: 'Black Olives', price: 0.99 },
     { id: 'green_olives', name: 'Green Olives', price: 0.99 },
+
     { id: 'spinach', name: 'Spinach', price: 0.99 },
     { id: 'jalapenos', name: 'Jalapeños', price: 0.99 },
+
     { id: 'pineapple', name: 'Pineapple', price: 0.99 },
+    { id: 'artichokes', name: 'Artichoke Hearts', price: 0.99 },
+
   ];
 
   readonly extras: PizzaOption[] = [
     { id: 'extra_cheese', name: 'Extra Cheese', price: 1.49 },
     { id: 'extra_sauce', name: 'Extra Sauce', price: 0.99 },
+
     { id: 'basil', name: 'Fresh Basil', price: 0 },
     { id: 'oregano', name: 'Oregano', price: 0 },
+    { id: 'italian_herbs', name: 'Italian Herb Blend', price: 0 },
+
+    { id: 'red_pepper_flakes', name: 'Red Pepper Flakes', price: 0 },
+    { id: 'parmesan_flakes', name: 'Parmesan Flakes', price: 0 },
     { id: 'sea_salt', name: 'Sea Salt', price: 0 },
     { id: 'pepper', name: 'Cracked Black Pepper', price: 0 },
-    
   ];
 
   readonly drizzles: PizzaOption[] = [
-    { id: 'olive_oil', name: 'Olive Oil Drizzle', price: 0.99 },
-    { id: 'ranch', name: 'Ranch Drizzle', price: 0.99 },
-    { id: 'franks_red_hot', name: 'Frank’s Red Hot Drizzle', price: 0.99 },
-    { id: 'bbq', name: 'BBQ Drizzle', price: 0.99 },
-    { id: 'pesto', name: 'Pesto Drizzle', price: 0.99 },
+    { id: 'olive_oil', name: 'Olive Oil Drizzle', price: 0.59 },
+
+    { id: 'ranch', name: 'Ranch Drizzle', price: 0.59 },
+    { id: 'bbq', name: 'BBQ Drizzle', price: 0.59 },
+    { id: 'honey_mustard', name: 'Honey Mustard Drizzle', price: 0.59 },
+
+    { id: 'franks_red_hot', name: 'Frank’s Red Hot Drizzle', price: 0.59 },
+    { id: 'blue_cheese', name: 'Blue Cheese Drizzle', price: 0.59 },
+
+    { id: 'honey', name: 'Honey Drizzle', price: 0.59 },
+
+    { id: 'balsamic', name: 'Balsamic Glaze Drizzle', price: 0.59 },
+    { id: 'pesto', name: 'Pesto Drizzle', price: 0.59 },
   ];
 
   private MAX_TOPPINGS = 8;
   private MAX_DRIZZLES = 2;
-  private MAX_EXTRAS = 3;
+  private MAX_EXTRAS = 4;
 
   pizza = signal<Pizza>({
     size: null,
@@ -194,7 +220,7 @@ export class PizzaBuilderService {
     const toppingNames = p.toppings.map(t => t.name).join(', ');
     return {
       name: `Custom Pizza (${p.size?.name})`,
-      description: `${p.crust?.name}, ${p.sauce?.name} sauce, ${p.cheese?.name}${toppingNames ? ', ' + toppingNames : ''}`,
+      description: `${p.crust?.name}, ${p.sauce?.name} sauce, ${p.cheese?.name}${toppingNames ? ', ' + toppingNames : ''}${p.drizzles && p.drizzles.length > 0 ? ', ' + p.drizzles.map(d => d.name).join(', ') : ''}${p.extras && p.extras.length > 0 ? ', ' + p.extras.map(e => e.name).join(', ') : ''}`,
       price: this.price(),
     };
   }

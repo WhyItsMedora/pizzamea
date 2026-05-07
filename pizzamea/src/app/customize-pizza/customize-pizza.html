@@ -118,34 +118,46 @@
       </div>
       <div>
         <!-- Drizzles -->
+         <div class="option-section">
+          <div>
         <h2 class="option-title">6. Add Drizzles <span class="drizzle-limit">(Max 2, {{ pizzaBuilder.pizza().drizzles?.length || 0 }}/2 selected)</span></h2>
-        <div class="toppings-list">
+        <div class="drizzle-list">
           @for (drizzle of pizzaBuilder.drizzles; track drizzle.id) {
-            <div class="topping-row" [class.selected]="pizzaBuilder.isDrizzleSelected(drizzle.id)">
-              <div class="topping-info">
-                <span class="topping-name">{{ drizzle.name }}</span>
-                <span class="topping-price">+${{ drizzle.price.toFixed(2) }}</span>
+            <div class="drizzle-row" [class.selected]="pizzaBuilder.isDrizzleSelected(drizzle.id)">
+              <div class="drizzle-info">
+                <span class="drizzle-name">{{ drizzle.name }}</span>
+                <span class="drizzle-price">+${{ drizzle.price.toFixed(2) }}</span>
               </div>
-              <button class="topping-add-btn" (click)="toggleDrizzle(drizzle)">
+              <button class="drizzle-add-btn" (click)="toggleDrizzle(drizzle)">
                 {{ pizzaBuilder.isDrizzleSelected(drizzle.id) ? '−' : '+' }}
               </button>
             </div>
           }
         </div>
+      </div>
+      </div>
+      <div class="extra-spacer">
+
+      </div>
         <!-- Extras -->
-        <h2 class="option-title">7. Add Extras <span class="extra-limit">(Max 3, {{ pizzaBuilder.pizza().extras?.length || 0 }}/3 selected)</span></h2>
-        <div class="toppings-list">
+          <div class="option-section">
+            <div>
+        <h2 class="option-title">7. Add Extras <span class="extra-limit">(Max 4, {{ pizzaBuilder.pizza().extras?.length || 0 }}/4 selected)</span></h2>
+        <div class="extra-list">
           @for (extra of pizzaBuilder.extras; track extra.id) {
-            <div class="topping-row" [class.selected]="pizzaBuilder.isToppingSelected(extra.id)">
-              <div class="topping-info">
-                <span class="topping-name">{{ extra.name }}</span>
-                <span class="topping-price">+${{ extra.price.toFixed(2) }}</span>
-              </div>
-              <button class="topping-add-btn" (click)="toggleExtra(extra)">
-                {{ pizzaBuilder.isToppingSelected(extra.id) ? '−' : '+' }}
-              </button>
-            </div>
+           <div class="extra-row" [class.selected]="pizzaBuilder.isExtraSelected(extra.id)">
+          <div class="extra-info">
+            <span class="extra-name">{{ extra.name }}</span>
+            <span class="extra-price">+${{ extra.price.toFixed(2) }}</span>
+          </div>
+          <button class="topping-add-btn" (click)="toggleExtra(extra)">
+            {{ pizzaBuilder.isExtraSelected(extra.id) ? '−' : '+' }}
+          </button>
+        </div>
+
           }
+        </div>
+          </div>
         </div>
       </div>
 
