@@ -1,0 +1,61 @@
+.menu-page {
+    background-color: floralwhite;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.menu-header {
+    text-align: center;
+    padding: 30px 20px 20px;
+    margin-bottom: 24px;
+}
+
+.menu-header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.menu-header p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+}
+
+.build-pizza-btn {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.build-pizza-btn:hover {
+    background-color: crimson;
+}
+
+.menu-content {
+    padding: 0 20px;
+}
+
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.category-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
