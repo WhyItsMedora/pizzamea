@@ -14,7 +14,7 @@ import { Router } from "@angular/router";
 
 })
 export class CustomizePizza {
-    toppingTabs = ['All', 'Meats', 'Veggies'];
+    toppingTabs = ['All', 'Meats', 'Veggies', 'Extras'];
     activeTab = 'All';
 
     constructor(
@@ -28,6 +28,16 @@ export class CustomizePizza {
     selectSauce(sauce: PizzaOption) { this.pizzaBuilder.setSauce(sauce); }
     selectCheese(cheese: PizzaOption) { this.pizzaBuilder.setCheese(cheese); }
     toggleTopping(topping: PizzaOption) { this.pizzaBuilder.toggleTopping(topping); }
+    toggleDrizzle(drizzle: PizzaOption) {
+        if (this.pizzaBuilder.isToppingSelected(drizzle.id)) {
+            this.pizzaBuilder.toggleDrizzle(drizzle);
+        }
+    }
+    toggleExtra(extra: PizzaOption) {
+        if (this.pizzaBuilder.isToppingSelected(extra.id)) {
+            this.pizzaBuilder.toggleTopping(extra);
+        }
+    }
 
     getFilteredToppings(): PizzaOption[] {
         if (this.activeTab === 'Meats') return this.pizzaBuilder.meats;

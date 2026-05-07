@@ -87,7 +87,7 @@
 
       <!-- Toppings -->
       <div class="option-section">
-        <h2 class="option-title">5. Add Your Toppings <span class="topping-limit">(Max 6, {{ pizzaBuilder.pizza().toppings.length }}/6 selected)</span></h2>
+        <h2 class="option-title">5. Add Your Toppings <span class="topping-limit">(Max 8, {{ pizzaBuilder.pizza().toppings.length }}/8 selected)</span></h2>
 
         <!-- Filter Tabs -->
         <div class="topping-tabs">
@@ -111,6 +111,38 @@
               </div>
               <button class="topping-add-btn" (click)="toggleTopping(topping)">
                 {{ pizzaBuilder.isToppingSelected(topping.id) ? '−' : '+' }}
+              </button>
+            </div>
+          }
+        </div>
+      </div>
+      <div>
+        <!-- Drizzles -->
+        <h2 class="option-title">6. Add Drizzles <span class="drizzle-limit">(Max 2, {{ pizzaBuilder.pizza().drizzles?.length || 0 }}/2 selected)</span></h2>
+        <div class="toppings-list">
+          @for (drizzle of pizzaBuilder.drizzles; track drizzle.id) {
+            <div class="topping-row" [class.selected]="pizzaBuilder.isDrizzleSelected(drizzle.id)">
+              <div class="topping-info">
+                <span class="topping-name">{{ drizzle.name }}</span>
+                <span class="topping-price">+${{ drizzle.price.toFixed(2) }}</span>
+              </div>
+              <button class="topping-add-btn" (click)="toggleDrizzle(drizzle)">
+                {{ pizzaBuilder.isDrizzleSelected(drizzle.id) ? '−' : '+' }}
+              </button>
+            </div>
+          }
+        </div>
+        <!-- Extras -->
+        <h2 class="option-title">7. Add Extras <span class="extra-limit">(Max 3, {{ pizzaBuilder.pizza().extras?.length || 0 }}/3 selected)</span></h2>
+        <div class="toppings-list">
+          @for (extra of pizzaBuilder.extras; track extra.id) {
+            <div class="topping-row" [class.selected]="pizzaBuilder.isToppingSelected(extra.id)">
+              <div class="topping-info">
+                <span class="topping-name">{{ extra.name }}</span>
+                <span class="topping-price">+${{ extra.price.toFixed(2) }}</span>
+              </div>
+              <button class="topping-add-btn" (click)="toggleExtra(extra)">
+                {{ pizzaBuilder.isToppingSelected(extra.id) ? '−' : '+' }}
               </button>
             </div>
           }
@@ -157,6 +189,27 @@
             </span>
           </div>
         }
+        @if (pizzaBuilder.pizza()!.drizzles!.length > 0) {
+          <div class="summary-row">
+            <span class="summary-label">Drizzles</span>
+            <span class="summary-value">
+              @for (drizzle of pizzaBuilder.pizza()!.drizzles!; track drizzle.id) {
+                <span class="drizzle-tag">{{ drizzle.name }}</span>
+              }
+            </span>
+          </div>
+        }
+
+        @if (pizzaBuilder.pizza()!.extras!.length > 0) {
+          <div class="summary-row">
+            <span class="summary-label">Extras</span>
+            <span class="summary-value">
+              @for (extra of pizzaBuilder.pizza()!.extras!; track extra.id) {
+                <span class="extra-tag">{{ extra.name }}</span>
+              }
+            </span>
+          </div>
+        }
       </div>
       <div class="summary-footer">
         <div class="total-row">
@@ -169,7 +222,7 @@
           (click)="addToCart()">
           Place Order
         </button>
-        <p class="order-note">Ready for pickup in 15-20 minutes</p>
+        <p class="order-note">Ready for pickup in 30 minutes</p>
       </div>
     </div>
 

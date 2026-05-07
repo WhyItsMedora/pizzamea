@@ -239,6 +239,28 @@
     color: #c0392b;
 }
 
+.drizzle-tag {
+    display: inline-block;
+    font-size: 0.82rem;
+    color: #c0392b;
+    background-color: #fce4e4;
+    padding: 4px 8px;
+    border-radius: 12px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+}
+
+.extra-tag {
+    display: inline-block;
+    font-size: 0.82rem;
+    color: #c0392b;
+    background-color: #fce4e4;
+    padding: 4px 8px;
+    border-radius: 12px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+}   
+
 .summary-footer {
     margin-top: 20px;
     border-top: 1px solid #e0d5c5;
