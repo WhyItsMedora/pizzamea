@@ -142,38 +142,45 @@
         </div>
     </section>
     <!-- Pizza of the Day -->
-    <section class="pizza-day">
+   <section class="pizza-day">
+
+  <!-- HEADING ABOVE -->
+  <h2 class="pizza-day-heading">Pizza of the Day</h2>
+
   <div class="pizza-day-container">
 
     <!-- LEFT SIDE (TEXT) -->
     <div class="pizza-day-text">
-      <h2 class="pizza-day-heading">Pizza of the Day</h2>
-
       <h3 class="pizza-day-subtitle">TODAY'S SPECIAL</h3>
 
-      <h1 class="pizza-day-name">Spicy Italian Supreme</h1>
+      <h1 class="pizza-day-name">{{ pizzaOfTheDay.name }}</h1>
 
       <p class="pizza-day-desc">
-        Pepperoni, Italian sausage, jalapeños, red onions, fresh mozzarella, 
-        and Frank's RedHot sauce on a wood-fired crust
+        {{ pizzaOfTheDay.description }}
       </p>
 
       <div class="pizza-day-price">
-        <span class="old-price">$16.99</span>
-        <span class="new-price">$12.99</span>
+        <span class="old-price">${{ pizzaOfTheDay.oldPrice.toFixed(2) }}</span>
+        <span class="new-price">${{ pizzaOfTheDay.price.toFixed(2) }}</span>
       </div>
 
-      <a href="#" class="pizza-day-btn">Order Now</a>
+      <a href="/cart" class="pizza-day-btn">Order Now</a>
 
-      <p class="pizza-day-note">* Available today only while supplies last</p>
+      <p class="pizza-day-note">
+        * No substitutions or modifications.
+        <br>
+        Pizza of the day comes on a medium crust unless otherwise specified.
+        
+      </p>
     </div>
 
     <!-- RIGHT SIDE (IMAGE) -->
     <div class="pizza-day-image">
-      <img src="images/wood-fired.jpg" alt="Wood Fired Pizza"/>
+      <img [src]="pizzaOfTheDay.image" alt="Pizza of the Day"/>
     </div>
 
   </div>
 </section>
+
 
 </div>

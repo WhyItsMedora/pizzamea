@@ -199,7 +199,30 @@
   display: flex;
   align-items: stretch;
   justify-content: center;
-  max-width: 1100px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* LEFT SIDE */
+.pizza-day {
+  padding: 4rem 0;
+  background: #fff;
+  text-align: center;
+}
+
+.pizza-day-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.pizza-day-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 800px;
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
@@ -207,23 +230,24 @@
 
 /* LEFT SIDE */
 .pizza-day-text {
-  background: #d62828; /* deep red */
+  background: #d62828;
   color: white;
   padding: 3rem 2rem;
   flex: 1;
-}
-
-.pizza-day-heading {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
+  text-align: left;
 }
 
 .pizza-day-subtitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
+  color: #3E2723;
+  background-color: #FFD712;
   opacity: 0.9;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 30px;
+  letter-spacing: 0.5px;
 }
 
 .pizza-day-name {

@@ -75,7 +75,7 @@ export class PizzaBuilderService {
 
   readonly veggies: PizzaOption[] = [
     { id: 'mushrooms', name: 'Mushrooms', price: 0.99 },
-    { id: 'peppers', name: 'Bell Peppers', price: 0.99 },
+    { id: 'bell_peppers', name: 'Bell Peppers', price: 0.99 },
     { id: 'roasted_peppers', name: 'Roasted Bell Peppers', price: 0.99 },
 
     { id: 'yellow_onions', name: 'Yellow Onions', price: 0.99 },
@@ -117,7 +117,7 @@ export class PizzaBuilderService {
     { id: 'olive_oil', name: 'Olive Oil Drizzle', price: 0.59 },
 
     { id: 'ranch', name: 'Ranch Drizzle', price: 0.59 },
-    { id: 'bbq', name: 'BBQ Drizzle', price: 0.59 },
+    { id: 'bbq_drizzle', name: 'BBQ Drizzle', price: 0.59 },
     { id: 'honey_mustard', name: 'Honey Mustard Drizzle', price: 0.59 },
 
     { id: 'franks_red_hot', name: 'Frank’s Red Hot Drizzle', price: 0.59 },

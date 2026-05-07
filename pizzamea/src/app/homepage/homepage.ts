@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { getTodayPizza } from '../pizza-of-the-day';
 
 @Component({
   selector: 'app-homepage',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './homepage.html',
   styleUrl: './homepage.css',
 })
-export class Homepage {}
+export class Homepage {
+  pizzaOfTheDay = getTodayPizza();
+}
