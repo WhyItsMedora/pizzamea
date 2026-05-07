@@ -1,5 +1,6 @@
 export function getTodayPizza(): PizzaOfTheDay {
   const day = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+  // const day = "Friday"; -- IGNORE - for testing purposes
   return pizzasByDay[day];
 }
 
@@ -30,7 +31,7 @@ export const pizzasByDay: Record<string, PizzaOfTheDay> = {
     ],
     price: 12.95,
     oldPrice: 16.95,
-    image: 'images/wood-fired.jpg',
+    image: 'images/Spicy-Italian-ai.png',
     day: 'Monday'
   },
 
@@ -48,7 +49,7 @@ export const pizzasByDay: Record<string, PizzaOfTheDay> = {
     ],
     price: 12.57,
     oldPrice: 16.57,
-    image: 'images/wood-fired.jpg',
+    image: 'images/Margherita-ai.png',
     day: 'Tuesday'
   },
 
@@ -66,7 +67,7 @@ export const pizzasByDay: Record<string, PizzaOfTheDay> = {
     ],
     price: 12.56,
     oldPrice: 15.56,
-    image: 'images/wood-fired.jpg',
+    image: 'images/BBQ-Chicken-Delight-ai.png',
     day: 'Wednesday'
   },
 
@@ -74,19 +75,21 @@ export const pizzasByDay: Record<string, PizzaOfTheDay> = {
     id: 'veggie_supreme',
     name: 'Veggie Supreme',
     description:
-      'Bell peppers, mushrooms, black olives, red onions, and shredded mozzarella drizzled with olive oil on a thin crust  ',
+      'Bell peppers, mushrooms, black olives, red onions, basil, and shredded mozzarella drizzled with olive oil and italian seasoning on a thin crust  ',
     toppings: [
       'marinara',
       'bell_peppers',
       'mushrooms',
       'black_olives',
       'red_onions',
+      'basil',
       'shredded_mozzarella',
-      'olive_oil'
+      'olive_oil',
+      'italian_seasoning'
     ],
     price: 13.03,
     oldPrice: 17.03,
-    image: 'images/wood-fired.jpg',
+    image: 'images/Veggie-ai.png',
     day: 'Thursday'
   },
 
@@ -104,7 +107,7 @@ export const pizzasByDay: Record<string, PizzaOfTheDay> = {
     ],
     price: 13.95,
     oldPrice: 17.95,
-    image: 'images/wood-fired.jpg',
+    image: 'images/Meat-Lovers-ai.png',
     day: 'Friday'
   },
 
@@ -121,7 +124,7 @@ export const pizzasByDay: Record<string, PizzaOfTheDay> = {
     ],
     price: 12.49,
     oldPrice: 15.49,
-    image: 'images/wood-fired.jpg',
+    image: 'images/Hawaiian-Fire-ai.png',
     day: 'Saturday'
   },
 
@@ -129,7 +132,7 @@ export const pizzasByDay: Record<string, PizzaOfTheDay> = {
     id: 'four_cheese',
     name: 'Four Cheese Blend',
     description:
-      'Fresh mozzarella, provolone, ricotta, and gorgonzola on a garlic crust',
+      'Fresh mozzarella, provolone, ricotta, and gorgonzola on a stuffed crust',
     toppings: [
       'fresh_mozzarella',
       'provolone',
@@ -138,7 +141,7 @@ export const pizzasByDay: Record<string, PizzaOfTheDay> = {
     ],
     price: 12.95,
     oldPrice: 15.95,
-    image: 'images/wood-fired.jpg',
+    image: 'images/Four-Cheese-Blend-ai.png',
     day: 'Sunday'
   }
 };
