@@ -11,7 +11,6 @@ import { CustomizePizza } from './customize-pizza/customize-pizza';
 export const routes: Routes = [
     {path: '', component: Homepage},
     
-//Commented out for now, as these pages are not yet implemented
   { path: 'menu', component: Menu },
   { path: 'customize-pizza', component: CustomizePizza },
   { path: 'cart', component: Cart },
