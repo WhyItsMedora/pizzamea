@@ -46,8 +46,4 @@ export class CustomizePizza {
         this.pizzaBuilder.reset();
         this.router.navigate(['/cart']);
     }
-
-
-
-
 }
