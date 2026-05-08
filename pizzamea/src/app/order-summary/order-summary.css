@@ -5,3 +5,12 @@
 h4 {
     font-weight: bold;
 }
+
+.confirmation-style {
+    box-shadow: none !important;
+}
+
+button:hover {
+    color: red;
+    font-weight: bold;
+}

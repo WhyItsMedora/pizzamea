@@ -10,5 +10,5 @@ export const routes: Routes = [
   { path: 'menu', component: Menu },
   { path: 'customize-pizza', component: CustomizePizza },
   { path: 'cart', component: Cart },
-  { path: 'confirmation', component: Confirmation},
+  { path: 'confirmation/:id', component: Confirmation }
 ];
