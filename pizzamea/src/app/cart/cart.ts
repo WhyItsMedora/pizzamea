@@ -47,18 +47,21 @@ export class Cart {
 
     await this.orderService.updateCustomerInfo(first, last, pickup);
 
-    const order = await this.orderService.getOrderById(this.orderService.orderID()!);
-
-    this.router.navigate(['/confirmation']);
+    const id = this.orderService.orderID();
+    this.router.navigate(['/confirmation', id]);
   }
 
-  // For testing only, creates an order with no items and empty customer info
-  async ngOnInit() {
-    await this.orderService.createOrder({
-      items: [],
-      firstName: '',
-      lastName: '',
-      pickupTime: ''
-    });
+  get order() {
+    return this.orderService.order();
   }
+
+  // // For testing only, creates an order with no items and empty customer info
+  // async ngOnInit() {
+  //   await this.orderService.createOrder({
+  //     items: [],
+  //     firstName: '',
+  //     lastName: '',
+  //     pickupTime: ''
+  //   });
+  // }
 }

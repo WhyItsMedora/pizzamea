@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <h1 class="text-center mt-4">Order Confirmed</h1>
       <p class="text-center mt-3" *ngIf="order">
-        Thank you for your order {{ order.firstName }}, We're firing up your pizza!
+        Thank you for your order {{ order.firstName }}, we're firing up your pizza!
       </p>
       <div class="col-md-8">
         <div class="card p-4 mt-3 shadow-sm">
@@ -33,13 +33,11 @@
               </div>
             </div>
           </div>
-          <h4 class="mt-4">Order Summary</h4>
-          <p class="card text-center">summary here</p>
-          <h5 class="text-end">Total: $0.00</h5>
+          <app-order-summary [allowRemoval]="false" [confirmationMode]="true"></app-order-summary>
         </div>
       </div>
       <div class="col-md-8 mt-4">
-        <div class="card p-4 mt-3 shadow-sm">
+        <div class="card p-4 mt-3 shadow-sm mb-5">
           <div class="row">
             <div class="col-md-6">
               <h3>Pickup Location</h3>

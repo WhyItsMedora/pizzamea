@@ -58,6 +58,44 @@ export class OrderService {
   async getOrderById(id: string) {
     const ref = doc(this.orderCollection, id);
     const snap = await getDoc(ref);
-    return snap.data() as Order;
+
+    if (!snap.exists()) return null;
+
+    const order = { id, ...(snap.data() as Order) };
+
+    this.order.set(order);
+    return order;
+  }
+
+  async removeItemFromOrder(index: number) {
+    const id = this.orderID();
+    if (!id) return;
+
+    const orderRef = doc(this.orderCollection, id);
+
+    const snap = await getDoc(orderRef);
+    const current = snap.data() as Order;
+
+    const updatedItems = [...current.items];
+    updatedItems.splice(index, 1); // remove exactly one item at that index
+
+    await updateDoc(orderRef, { items: updatedItems });
+
+    this.order.update(o => ({
+        ...(o as Order),
+        items: updatedItems
+      }));
+    }
+
+    clearOrder() {
+    this.order.set({
+      id: '',
+      items: [],
+      firstName: '',
+      lastName: '',
+      pickupTime: ''
+    });
+
+    this.orderID.set(null);
   }
 }
