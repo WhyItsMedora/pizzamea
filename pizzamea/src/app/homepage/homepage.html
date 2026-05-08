@@ -164,7 +164,9 @@
         <span class="new-price">${{ pizzaOfTheDay.price.toFixed(2) }}</span>
       </div>
 
-      <a href="/cart" class="pizza-day-btn" >Order Now</a>
+      <button class="pizza-day-btn" (click)="orderPizzaOfTheDay()">
+        Order Now
+      </button>
 
       <p class="pizza-day-note">
         * No substitutions or modifications.

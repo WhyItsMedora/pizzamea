@@ -34,6 +34,7 @@ export class OrderService {
     return orderRef.id;
   }
 
+
   async updateCustomerInfo(first: string, last: string, pickup: string) {
     const id = this.orderID();
 
