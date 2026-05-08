@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { OrderService } from '../order-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { getTodayPizza } from '../pizza-of-the-day';
 
 @Component({
   selector: 'app-homepage',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './homepage.html',
   styleUrl: './homepage.css',
 })
