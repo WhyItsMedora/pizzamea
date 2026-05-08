@@ -55,6 +55,11 @@ export class Cart {
     return this.orderService.order();
   }
 
+  get hasItems() {
+    return (this.order?.items?.length ?? 0) > 0;
+  }
+
+
   // // For testing only, creates an order with no items and empty customer info
   // async ngOnInit() {
   //   await this.orderService.createOrder({

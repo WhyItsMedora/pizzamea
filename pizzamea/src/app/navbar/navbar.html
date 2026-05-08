@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-white">
   <div class="container">
-
     <!-- Brand -->
     <div class="navbar-brand d-flex align-items-center">
       <img
@@ -21,13 +20,20 @@
 
     <!-- Links + Cart -->
     <div class="d-flex align-items-center ms-auto gap-4">
-
       <ul class="navbar-nav d-flex flex-row gap-4">
         <li class="nav-item">
-          <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Home</a>
+          <a
+            routerLink=""
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+            >Home</a
+          >
         </li>
         <li class="nav-item">
-          <a routerLink="/customize-pizza" routerLinkActive="active" class="nav-link">Build Your Pizza</a>
+          <a routerLink="/customize-pizza" routerLinkActive="active" class="nav-link"
+            >Build Your Pizza</a
+          >
         </li>
         <li class="nav-item">
           <a routerLink="/menu" routerLinkActive="active" class="nav-link">Menu</a>
@@ -36,10 +42,8 @@
 
       <button class="cart-button" routerLink="/cart">
         <span class="material-symbols-outlined cart-icon">shopping_cart</span>
-        <span class="cart-text">Cart (0)</span>
+        <span class="cart-text">Cart ({{ itemCount }})</span>
       </button>
-
     </div>
-
   </div>
 </nav>

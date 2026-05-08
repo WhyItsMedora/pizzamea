@@ -11,8 +11,8 @@
           <div class="text-end">
             <button
               type="button"
-              class="btn mt-3 mb-3"
-              [disabled]="!group.valid"
+              class="btn mt-3 mb-4"
+              [disabled]="!group.valid || !hasItems"
               (click)="placeOrder()"
             >
               Place Order

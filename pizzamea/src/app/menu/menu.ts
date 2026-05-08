@@ -2,29 +2,38 @@ import { Component, OnInit } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { MenuItemComponent } from "../menu-item/menu-item";
 import { MenuCategory, MenuItem, MenuService } from "../services/menu.service";
-
+import { OrderService } from "../order-service";
+import { Router } from "@angular/router";
 
 @Component({
-    selector: 'app-menu',
-    imports: [ RouterModule, MenuItemComponent],
-    templateUrl: './menu.html',
-    styleUrl: './menu.css'
+  selector: 'app-menu',
+  standalone: true,
+  imports: [RouterModule, MenuItemComponent],
+  templateUrl: './menu.html',
+  styleUrl: './menu.css'
 })
+export class Menu implements OnInit {
+  categories: MenuCategory[] = [];
 
-export class Menu implements OnInit{
-    categories:MenuCategory[] = [];
+  constructor(
+    private menuService: MenuService,
+    private orderService: OrderService,
+    private router: Router
+  ) {}
 
-    constructor(private menuService: MenuService){
+  ngOnInit() {
+    this.categories = this.menuService.getCategories();
+  }
 
-    }
+  async onAddToCart(item: MenuItem) {
+    const orderItem = {
+      name: item.name,
+      price: item.price,
+    };
 
-    ngOnInit() {
-        this.categories = this.menuService.getCategories();
-    }
+    const currentOrder = this.orderService.order();
+    const items = currentOrder ? [...currentOrder.items, orderItem] : [orderItem];
 
-    onAddToCart(item: MenuItem){
-        //still need to wire up to OrderService when its created
-         console.log('Added to cart:', item);
-        alert(`${item.name} added to cart`);
-     }
+    await this.orderService.createOrder({ items });
+  }
 }
